@@ -941,14 +941,14 @@ const FPEngine = function (gameAreaId, options) {
         if (name.substr(0, 6) === "__obj_") return console.error(`Reserved keyword prohobited: "__obj_".`);
         if (gameobjects[name]) return console.error(`Cannot create "${name}": Object already exists.`);
         const options = Object.assign({}, ...rest);
-        type(name, options);
+        return type(name, options);
     }
     const createViewPortV = function (name, type, ...rest) {//verification
         if (!name) return console.error(`Cannot create viewport with no name.`);
         if (viewports[name]) return console.error(`Cannot create "${name}": Viewport already exists.`);
         if (name.substr(0, 6) === "__obj_") return console.error(`Reserved keyword prohobited: "__obj_".`);
         const options = Object.assign({}, ...rest);
-        type(name, options);
+        return type(name, options);
     }
     const createImage = function (name, ...rest) {
         if (!name) return console.error(`Cannot create textfield with no name.`);
